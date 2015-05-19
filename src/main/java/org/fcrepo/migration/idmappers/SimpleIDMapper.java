@@ -16,9 +16,9 @@ import org.fcrepo.migration.MigrationIDMapper;
  */
 public class SimpleIDMapper implements MigrationIDMapper {
 
-    private String baseUrl;
+    protected String baseUrl;
 
-    private String rootPath;
+    protected String rootPath;
 
     private int charDepth;
 
@@ -60,7 +60,7 @@ public class SimpleIDMapper implements MigrationIDMapper {
         return pidToPath(pid);
     }
 
-    private String pidToPath(final String pid) {
+    protected String pidToPath(final String pid) {
         final StringBuffer path = new StringBuffer();
         path.append(rootPath);
         if (!rootPath.endsWith("/")) {
